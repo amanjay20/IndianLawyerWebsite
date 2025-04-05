@@ -16,7 +16,7 @@ function App() {
     <Router>
       {/* Navbar ko sabhi pages par dikhane ke liye */}
       <Navbar />
-      <div className="container mx-auto mt-5 p-4">
+      <div className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

@@ -1,43 +1,66 @@
 import React from "react";
-import {  FaUser } from "react-icons/fa"; // Login icon
-import { IoMdClose } from "react-icons/io"; // Close icon
+import { RiFacebookCircleFill } from "react-icons/ri";
+import { RiInstagramFill } from "react-icons/ri";
+import { RiTwitterXLine } from "react-icons/ri";
+import { ImLocation } from "react-icons/im";
+import { MdCall } from "react-icons/md";
+import { BiSolidMessage } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between bg-gray-100 px-6 py-2 shadow-md">
-      {/* Left Side: Login Icon */}
-      <div className="flex items-center space-x-4">
-        < FaUser className="text-blue-600 text-2xl cursor-pointer" title="Login" />
-        {/* <IoMdClose className="text-gray-600 text-2xl cursor-pointer" title="Close" /> */}
+    <div className="bg-gradient-to-r from-[#89620E] via-[#D1C158] to-[#89620E] text-white py-2">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Left Section */}
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <div className="flex items-center space-x-1 text-xs md:text-sm">
+            <ImLocation className="text-sm md:text-base" />
+            <span className="hidden sm:inline">BHEL, Bhopal, Madhya Pradesh 462022</span>
+            <span className="inline sm:hidden">Bhopal, MP</span>
+          </div>
+          <div className="flex items-center space-x-1 text-xs md:text-sm hidden sm:flex">
+            <MdCall className="text-sm md:text-base" />
+            <span className="hidden md:inline">+919827261503</span>
+            <span className="inline md:hidden">+91 9827261503</span>
+          </div>
+          <div className="flex items-center space-x-1 text-xs md:text-sm hidden lg:flex">
+            <BiSolidMessage className="text-sm md:text-base" />
+            <span>info@bestadvocatebhopalindia.in</span>
+          </div>
+          {/* Visible on Phone */}
+          <div className="flex items-center space-x-1 text-xs sm:hidden">
+            <BiSolidMessage className="text-sm" />
+            <span>info@...in</span> {/* Abbreviated email for phone */}
+          </div>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center space-x-2 md:space-x-3">
+          <div className="hidden sm:flex space-x-2">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
+              <RiFacebookCircleFill />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
+              <RiInstagramFill />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
+              <RiTwitterXLine />
+            </a>
+          </div>
+          {/* Visible on Phone */}
+          <div className="flex sm:hidden space-x-2">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
+              <RiFacebookCircleFill />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
+              <RiInstagramFill />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
+              <RiTwitterXLine />
+            </a>
+          </div>
+        </div>
       </div>
-               {/* Search Input Section */}
-      <div className="flex bg-white rounded-md overflow-hidden w-full md:w-1/2">
-  <input
-    type="text"
-    placeholder="Search - Keyword"
-    className="w-full p-4 py-2 outline-none text-gray-700"
-  />
-  {/* Button hidden on small screens, visible on md+ screens */}
-  {/* Button hidden on small screens, visible on md+ screens */}
-<button className="hidden md:block bg-orange-500 mr-12 py-2 text-white font-semibold">
-  Search
-</button>
-
-{/* Center: Skip to Main - Hidden on small screens
-<a href="#main" className="hidden md:inline text-gray-600 hover:underline">
-  Skip to main content
-</a> */}
-
-{/* Right Side: Accessibility & Language Switcher - Hidden on small screens */}
-<div className="hidden md:flex items-center space-x-4">
-  
-  <button className="text-lg font-bold">A</button>
-  <button className="text-lg">+A</button>
-  <button className="bg-black text-white px-2 py-1 rounded">A</button>
-  <button className="bg-orange-500 text-white px-2 py-1 rounded">हिन्दी</button>
-</div>
-</div>
-    </header>
+    </div>
   );
 };
 

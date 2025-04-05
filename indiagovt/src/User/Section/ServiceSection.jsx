@@ -29,7 +29,7 @@ const cards = [
 
 const ServiceSection = () => {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto">
       <h2 className="text-3xl font-bold text-center mb-6">Our Services</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card) => (
@@ -38,7 +38,7 @@ const ServiceSection = () => {
             <div className="p-4">
               <h3 className="text-xl font-semibold">{card.title}</h3>
               <p className="text-gray-600">{card.description}</p>
-              <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              <button className="mt-4 bg-amber-600 text-white px-4 py-2 rounded hover:bg-black hover:text-white">
                 Read More
               </button>
             </div>

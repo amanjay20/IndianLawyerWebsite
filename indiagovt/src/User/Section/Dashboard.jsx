@@ -80,55 +80,112 @@
 //   );
 // }
 
-import React from "react";
+// import React from "react";
 
-const Sidebar = ({ title, items }) => (
-  <div className="w-64 bg-gray-100 p-4 border-r border-gray-300 h-1/2 hidden md:block">
-    <h2 className="text-lg font-bold mb-4">{title}</h2>
-    <ul>
-      {items.map((item, index) => (
-        <li key={index} className="mb-2 text-gray-700 cursor-pointer hover:text-blue-500">
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+// const Sidebar = ({ title, items }) => (
+//   <div className="w-64 bg-gray-100 p-4 border-r border-gray-300 h-1/2 hidden md:block">
+//     <h2 className="text-lg font-bold mb-4">{title}</h2>
+//     <ul>
+//       {items.map((item, index) => (
+//         <li key={index} className="mb-2 text-gray-700 cursor-pointer hover:text-blue-500">
+//           {item}
+//         </li>
+//       ))}
+//     </ul>
+//   </div>
+// );
 
-const  Dashboard = () => {
-  return (
-    <div className="flex min-h-1/2 bg-gray-50">
-      {/* Left Sidebar */}
-      <Sidebar
-        title="Law & Justice"
-        items={["Judiciary", "ADR", "Enactment of Laws", "Institutions", "Legal Aid"]}
-      />
+// const  Dashboard = () => {
+//   return (
+//     <div className="flex min-h-1/2 bg-gray-50 mx-auto px-4">
+//       {/* Left Sidebar */}
+//       <Sidebar
+//         title="Law & Justice"
+//         items={["Judiciary", "ADR", "Enactment of Laws", "Institutions", "Legal Aid"]}
+//       />
       
-      {/* Main Content */}
-      <div className="flex-1 p-6 overflow-auto">
-        <h1 className="text-2xl font-bold mb-4">Law & Justice</h1>
-        <p className="text-gray-700">
-          The Constitution of India guarantees protection of life and personal liberty to all. It provides safeguards...
-        </p>
-        <div className="mt-6 p-4 bg-white shadow-md rounded-md">
-          <h2 className="text-lg font-semibold">Services</h2>
-          <ul className="list-disc pl-6 text-gray-600">
-            <li>Check status of complaints with National Commission for Women</li>
-            <li>PMO Grievance Portal</li>
-            <li>Check details of missing children</li>
-          </ul>
+//       {/* Main Content */}
+//       <div className="flex-1 p-6 overflow-auto">
+//         <h1 className="text-2xl font-bold mb-4">Law & Justice</h1>
+//         <p className="text-gray-700">
+//           The Constitution of India guarantees protection of life and personal liberty to all. It provides safeguards...
+//         </p>
+//         <div className="mt-6 p-4 bg-white shadow-md rounded-md">
+//           <h2 className="text-lg font-semibold">Services</h2>
+//           <ul className="list-disc pl-6 text-gray-600">
+//             <li>Check status of complaints with National Commission for Women</li>
+//             <li>PMO Grievance Portal</li>
+//             <li>Check details of missing children</li>
+//           </ul>
+//         </div>
+//       </div>
+//       <div>
+//       {/* Right Sidebar */}
+//       <Sidebar
+//         title="Most Viewed"
+//         items={["Ministry of Law & Justice", "Lastest Cases", "High Court Websites"]}
+//       />
+//         <Sidebar
+//         title="What's News"
+//         items={["Cases News","Law Manual", "High Court Websites"]}
+//       /></div>
+//     </div>
+//   );
+// };
+
+// export default Dashboard;
+
+import React from "react";
+import { FaBalanceScale, FaGavel, FaBookOpen } from "react-icons/fa"; // Import law-related icons
+import WhatLaws from "../../Component/WhatLaws";
+import LatestUpdates from "../../Component/LatestUpdates";
+import WhatNews from "../../Component/WhatNews";
+
+const Dashboard = () => {
+  return (
+    <div className="h-auto bg-gray-50 py-6 px-4 sm:px-6 lg:px-8 lg:mb-11">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[1fr_3fr_1fr] gap-6">
+        {/* Left Sidebar */}
+        <WhatLaws height="300px" />
+
+        {/* Main Content */}
+        <div className="bg-white shadow-md rounded-md p-6 overflow-auto">
+          <h1 className="text-2xl font-semibold mb-4">Why Choose Us ?</h1>
+          <div className="lg:flex items-center mb-4">
+            <div className="w-auto pr-4 flex justify-center lg:justify-start">
+              <div className="bg-amber-100 rounded-full p-6 shadow-md flex items-center justify-center w-24 h-24 md:w-32 md:h-32">
+                <FaBalanceScale className="text-amber-700 text-3xl md:text-4xl" />
+              </div>
+            </div>
+            <p className="text-gray-700 text-sm mt-4 lg:mt-0">
+              In Advocate Umesh Pandey leadership we are group of Senior Advocates/ Lawyers practicing at Bhopal/ Jabalpur and in all district / High Court / Supreme Court of India, for Criminal, Civil, Accidental, Family – marriage or Divorce, Consumer forum, Railway Tribunal, cooperative Registration /Namantaran of Properties, Registered Will deeds personal and industrial Agreements, Tribunal, NGT (National Green Tribunal), service cases, Banking/DRT (Debt recovery tribunal) and Company laws cases experts, providing JUSTICE earliest and affordable.
+            </p>
+          </div>
+
+          <div className="mt-6 bg-gray-100 rounded-md">
+            <div className="flex border-b border-gray-200">
+              <button className="px-4 py-2 text-sm font-semibold text-[#89620E] focus:outline-none border-b-2 border-amber-500">Services</button>
+              <button className="px-4 py-2 text-sm font-semibold text-gray-600 focus:outline-none">Schemes</button>
+              <button className="px-4 py-2 text-sm font-semibold text-gray-600 focus:outline-none">Open Data</button>
+            </div>
+            <ul className="list-disc pl-6 text-gray-600 py-4 text-sm">
+              <li>Apply for Legal Aid for Women Victims of Dowry Practice, Uttar Pradesh</li>
+              <li>Application for Complaint about Atrocities, Uttar Pradesh</li>
+              <li>Application for Birth Certificate by Brihanmumbai Municipal Corporation, Maharashtra</li>
+              <li>Check status of your registered complaints with National Commission for Women</li>
+              <li>PMO Grievance Portal</li>
+              <li>Check details of missing children of Delhi and neighbouring states</li>
+            </ul>
+          </div>
+          {/* Add more main content here */}
+        </div>
+
+        {/* Right Sidebars */}
+        <div className="grid grid-cols-1 gap-4">
+          <LatestUpdates height="300px" />
+          <WhatNews height="300px" />
         </div>
       </div>
-      <div>
-      {/* Right Sidebar */}
-      <Sidebar
-        title="Most Viewed"
-        items={["Ministry of Law & Justice", "Lastest Cases", "High Court Websites"]}
-      />
-        <Sidebar
-        title="What's News"
-        items={["Cases News","Law Manual", "High Court Websites"]}
-      /></div>
     </div>
   );
 };
