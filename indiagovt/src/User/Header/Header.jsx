@@ -48,7 +48,7 @@ const Header = () => {
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
               <RiTwitterXLine />
             </a>
-            <Link to="/Signup">
+            <Link to="/login">
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
               < FaUser  />
             </a></Link>
@@ -64,7 +64,7 @@ const Header = () => {
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
               <RiTwitterXLine />
             </a>
-            <Link to="/Signup">
+            <Link to="/login">
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
               < FaUser/>
             </a>

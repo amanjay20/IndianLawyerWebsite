@@ -8,9 +8,9 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-      FullName: "",
-      EmailAddress: "",
-      Password: "",
+      name: "",
+      email: "",
+      password: "",
     });
     const [error, setError] = useState("");
   
@@ -25,13 +25,13 @@ const SignUp = () => {
   
     const handleSubmit = async(e) => {
       e.preventDefault();
-      const { FullName, EmailAddress, Password } = formData;
-      if (!FullName || !EmailAddress || !Password) {
+      const { name, email, password } = formData;
+      if (!name || !email || !password) {
         setError("All fields are required.");
         return;
       }
       try {
-        const response = await fetch("/api/v1/auth/register", {
+        const response = await fetch("/api/admin/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -39,7 +39,7 @@ const SignUp = () => {
   
         if (!response.ok) throw new Error("Registration failed.");
   
-        setFormData({ FullName: "", EmailAddress: "", Password: "" });
+        setFormData({ name: "", email: "", password: "" });
         alert("Thank you for signing up!");
         navigate("/login")
       } catch (err) {
@@ -60,24 +60,24 @@ const SignUp = () => {
         <form  onSubmit={handleSubmit}>
           <input
            type="text"
-           name="FullName"
-           value={formData.FullName}
+           name="name"
+           value={formData.name}
            onChange={handleChange}
             placeholder="Enter Full Name"
             className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-green-500"
           />
           <input
            type="email"
-           name="EmailAddress"
-           value={formData.EmailAddress}
+           name="email"
+           value={formData.email}
            onChange={handleChange}
             placeholder="Enter Email Address"
             className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-green-500"
           />
           <input
              type="password"
-             name="Password"
-             value={formData.Password}
+             name="password"
+             value={formData.password}
              onChange={handleChange}
             placeholder="Enter Password"
             className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-green-500"

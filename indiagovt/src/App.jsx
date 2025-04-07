@@ -9,26 +9,56 @@ import Advocate from "./User/Page/Advocate"
 import Navbar from "./User/Navbar/Navbar";
 import Contact from "./User/Page/Contact";
 
-import SignUp from "./Auth/signup";
+import SignUp from "./Auth/SignUp";
+import Login from "./Auth/Login";
 import Payment from "./User/Page/Payment";
+
+import Dashboard from "../src/Admin/Pages/DashBoard";
+
+import ProtectedRoute from "./Routes/ProtectedRoute";
 
 
 function App() {
   return (
     <Router>
       {/* Navbar ko sabhi pages par dikhane ke liye */}
-      <Navbar />
-      <div className="">
+     
+      
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/advocate" element={<Advocate />} />
-          <Route path="/signup" element={<SignUp/>}/>
-          <Route path="/payment" element={<Payment />} />
-        </Routes>
-      </div>
+          
+           {/* Routes with Navbar */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/advocate" element={<Advocate />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/payment" element={<Payment />} />
+              </Routes>
+            </>
+          }
+        />
+
+        {/* Admin route without Navbar */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+
+      
+      
     </Router>
   );
 }

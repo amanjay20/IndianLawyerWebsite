@@ -51,7 +51,7 @@ const Navbar = () => {
       {/* Navbar: Adjusts top margin on scroll */}
       <div
         className={`fixed left-0 w-full z-50 bg-white shadow-md py-2 transition-all duration-300 ${
-          isScrolled ? "top-0" : "mt-[4.5rem] top-0"
+          isScrolled ? "top-0" : "mt-[2.5rem] top-0"
         }`}
       >
         <div className="container mx-auto flex items-center justify-between px-4">
