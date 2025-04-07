@@ -5,6 +5,9 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { ImLocation } from "react-icons/im";
 import { MdCall } from "react-icons/md";
 import { BiSolidMessage } from "react-icons/bi";
+import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom"; // instead of from lucide-react
+
 
 const Header = () => {
   return (
@@ -45,6 +48,10 @@ const Header = () => {
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
               <RiTwitterXLine />
             </a>
+            <Link to="/Signup">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl hover:opacity-75">
+              < FaUser  />
+            </a></Link>
           </div>
           {/* Visible on Phone */}
           <div className="flex sm:hidden space-x-2">
@@ -57,6 +64,13 @@ const Header = () => {
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
               <RiTwitterXLine />
             </a>
+            <Link to="/Signup">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl hover:opacity-75">
+              < FaUser/>
+            </a>
+            </Link>
+            
+            
           </div>
         </div>
       </div>

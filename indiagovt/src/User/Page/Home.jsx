@@ -11,6 +11,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OurLawyersPage from "../Section/OurLawyersPage";
+import Testimonial from "../Section/Testimonial";
+
+
+
+
 
 const banners = [
   "https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-a-lawyer-is-sitting-at-his-desk-writing-on-the-book-image_16185992.jpg",
@@ -68,9 +73,13 @@ const Home = () => {
     </div>
       <Dashboard />
       <OurLawyersPage/>
+      
       <ServiceSection />
+      <Testimonial />
       <ContactSection />
+     
       <Footer />
+      
     </div>
   );
 };

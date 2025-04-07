@@ -31,7 +31,7 @@ const ServiceSection = () => {
   return (
     <div className="container mx-auto">
       <h2 className="text-3xl font-bold text-center mb-6">Our Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 p-4 lg:grid-cols-4 gap-6">
         {cards.map((card) => (
           <div key={card.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img src={card.img} alt={card.title} className="w-full h-48 object-cover" />

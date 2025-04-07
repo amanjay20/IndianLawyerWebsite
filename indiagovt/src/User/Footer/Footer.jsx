@@ -2,28 +2,25 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-200 text-black py-6 px-4">
+    <footer className="bg-black  text-white py-6 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Top Navigation Links */}
-        <div className="flex flex-wrap justify-center md:justify-start space-x-3 text-sm text-black border-b border-gray-700 pb-4">
-          <a href="#" className="hover:text-yellow-400">About us</a>
-          <a href="#" className="hover:text-yellow-400">Contact us</a>
-          <a href="#" className="hover:text-yellow-400">Feedback</a>
-          <a href="#" className="hover:text-yellow-400">Visitor Summary</a>
-          <a href="#" className="hover:text-yellow-400">Help</a>
-          <a href="#" className="hover:text-yellow-400">Link to Us</a>
-          <a href="#" className="hover:text-yellow-400">Newsletter</a>
-          <a href="#" className="hover:text-yellow-400">Tell a Friend</a>
-          <a href="#" className="hover:text-yellow-400">Website Policy</a>
-          <a href="#" className="hover:text-yellow-400">Sitemap</a>
+        <div className="flex flex-wrap justify-center md:justify-start space-x-3 text-sm text-white border-b border-gray-400 pb-4">
+          {[
+            "About us", "Contact us", "Feedback", "Visitor Summary",
+            "Help", "Link to Us", "Newsletter", "Tell a Friend",
+            "Website Policy", "Sitemap"
+          ].map((link, index) => (
+            <a key={index} href="#" className="hover:text-yellow-400">{link}</a>
+          ))}
         </div>
 
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
           {/* Information Related To */}
           <div>
-            <h2 className="font-bold text-lg text-white mb-2">Information Related To</h2>
-            <div className="grid grid-cols-2 gap-1 text-sm text-gray-400">
+            <h2 className="font-bold text-lg mb-2">Information Related To</h2>
+            <div className="grid grid-cols-2 gap-1 text-sm text-white/80">
               {[
                 "Agriculture", "Commerce", "Defence", "Environment & Forest",
                 "Food & Public Distribution", "Governance & Administration",
@@ -42,8 +39,8 @@ const Footer = () => {
 
           {/* About the Government */}
           <div>
-            <h2 className="font-bold text-lg text-white mb-2">About the Government</h2>
-            <div className="text-sm text-gray-400 flex flex-col space-y-1">
+            <h2 className="font-bold text-lg mb-2">About the Government</h2>
+            <div className="text-sm text-white/80 flex flex-col space-y-1">
               {[
                 "Constitution of India", "Government Directory", "Indian Parliament",
                 "Publications", "Who's Who", "President of India", "Vice-President of India",
@@ -72,7 +69,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="text-gray-400 text-sm text-center md:text-right">
+            <div className="text-white/80 text-sm text-center md:text-right">
               <p>
                 This Portal is a <span className="text-yellow-400">Mission Mode Project</span> under the{" "}
                 <span className="text-yellow-400">National E-Governance Plan</span>, and is owned,

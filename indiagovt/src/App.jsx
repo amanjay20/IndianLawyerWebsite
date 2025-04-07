@@ -10,6 +10,8 @@ import Navbar from "./User/Navbar/Navbar";
 import Contact from "./User/Page/Contact";
 
 import SignUp from "./Auth/signup";
+import Payment from "./User/Page/Payment";
+
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/advocate" element={<Advocate />} />
           <Route path="/signup" element={<SignUp/>}/>
-          
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </div>
     </Router>

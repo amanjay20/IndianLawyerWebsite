@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/Logo/lawyer_logo.png'
-import bgimage from '../assets/bg.jpg'
+import bgimage from '../assets/Logo/bg_Login.webp'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -85,14 +85,14 @@ const SignUp = () => {
 
           <button
             type="submit"
-            className="w-full bg-green-500 text-white p-3 rounded-lg font-semibold hover:bg-green-600"
+            className="w-full bg-yellow-500 text-white p-3 rounded-lg font-semibold hover:bg-yellow-600"
           >
             Signup
           </button>
 
           <p className="text-center text-gray-500 mt-6">
             Already have an account?{" "}
-            <a href="/login" className="text-green-500 font-semibold">
+            <a href="/login" className="text-yellow-500 font-semibold">
               Login
             </a>
           </p>
